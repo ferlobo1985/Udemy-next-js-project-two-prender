@@ -2,9 +2,6 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 const Home = (props) => {
-
-
-
   return (
     <div>
       <h1>Hello {props.name}</h1>
@@ -22,6 +19,15 @@ const Home = (props) => {
 export async function getStaticProps() {
   const request = await axios.get('https://jsonplaceholder.typicode.com/users');
   
+  // if(request.data.length > 8 ){
+  //   return {
+  //     redirect:{
+  //       destination:'/someplace_else'
+  //     }
+  //     //notFound:true
+  //   }
+  // }
+
   return {
     props:{
       name:'Francis',
