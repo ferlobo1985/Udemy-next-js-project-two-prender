@@ -21,13 +21,14 @@ const Home = (props) => {
 
 export async function getStaticProps() {
   const request = await axios.get('https://jsonplaceholder.typicode.com/users');
-
+  
   return {
     props:{
       name:'Francis',
       value:'Just a boy here',
       theRequest: request.data
-    }
+    },
+    revalidate:60
   }
 }
 
