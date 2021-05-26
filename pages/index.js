@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect } from 'react';
+import Link from 'next/link';
 
 const Home = (props) => {
   return (
@@ -11,6 +11,18 @@ const Home = (props) => {
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>
+
+      <div>
+        <div>
+          <Link href="/users/1">User one</Link>
+        </div>
+        <div>
+          <Link href="/users/2">User two</Link>
+        </div>
+        <div>
+          <Link href="/users/4">User four</Link>
+        </div>
+      </div>
     </div>
   )
 }
