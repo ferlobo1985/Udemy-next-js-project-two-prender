@@ -1,9 +1,18 @@
 import axios from 'axios';
+import { useRouter } from 'next/router'
 
 const User = (props) => {
+    const { isFallback } = useRouter();
+
     return(
         <>
-            <h1>I am user {props.user.name}</h1>
+            {
+                isFallback ?
+                    'oops'
+                :
+                    <h1>I am user {props.user.name}</h1>
+            }
+           
         </>
     )
 }
